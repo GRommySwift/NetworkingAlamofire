@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		048B6FFD271E6A1600BBA453 /* AlamofireNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B6FFC271E6A1600BBA453 /* AlamofireNetworkRequest.swift */; };
+		04B8746C2723DC2F00DDA69D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8746B2723DC2F00DDA69D /* Extensions.swift */; };
+		04B8746E2723DCC400DDA69D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8746D2723DCC400DDA69D /* LoginViewController.swift */; };
 		2DEF7F5BB5D50EE45484681C /* Pods_Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA5AFBA7A7672202CC23B8C9 /* Pods_Networking.framework */; };
 		A806CF94210B4EA300574064 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A806CF93210B4EA300574064 /* ImageViewController.swift */; };
 		A8255C80214103450074F6D0 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8255C7F214103450074F6D0 /* WebViewController.swift */; };
@@ -28,6 +30,9 @@
 
 /* Begin PBXFileReference section */
 		048B6FFC271E6A1600BBA453 /* AlamofireNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkRequest.swift; sourceTree = "<group>"; };
+		04B8746B2723DC2F00DDA69D /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		04B8746D2723DCC400DDA69D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		04B8746F2723DE0900DDA69D /* Networking.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Networking.entitlements; sourceTree = "<group>"; };
 		3627FC4DE13CF09ED9AF482B /* Pods-Networking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Networking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Networking/Pods-Networking.debug.xcconfig"; sourceTree = "<group>"; };
 		A806CF93210B4EA300574064 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		A8255C7F214103450074F6D0 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -100,9 +105,11 @@
 		A83C301F2108401A00592AE4 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				04B8746F2723DE0900DDA69D /* Networking.entitlements */,
 				A83C30202108401A00592AE4 /* AppDelegate.swift */,
 				A8493E702147D7B7004DE8A8 /* MainViewController.swift */,
 				048B6FFC271E6A1600BBA453 /* AlamofireNetworkRequest.swift */,
+				04B8746D2723DCC400DDA69D /* LoginViewController.swift */,
 				A8493E762147DC20004DE8A8 /* NetworkManager.swift */,
 				A855BC1B214F71FE00075CAE /* DataProvider.swift */,
 				A8493E722147D7CA004DE8A8 /* CollectionViewCell.swift */,
@@ -113,6 +120,7 @@
 				A895579F2142808400355357 /* WebsiteDescription.swift */,
 				A8255C8521410DFE0074F6D0 /* TableViewCell.swift */,
 				A8255C7F214103450074F6D0 /* WebViewController.swift */,
+				04B8746B2723DC2F00DDA69D /* Extensions.swift */,
 				A83C30242108401A00592AE4 /* Main.storyboard */,
 				A83C30272108401B00592AE4 /* Assets.xcassets */,
 				A83C30292108401B00592AE4 /* LaunchScreen.storyboard */,
@@ -241,12 +249,14 @@
 				A8493E7B214924F1004DE8A8 /* ImageProperties.swift in Sources */,
 				A8493E772147DC20004DE8A8 /* NetworkManager.swift in Sources */,
 				048B6FFD271E6A1600BBA453 /* AlamofireNetworkRequest.swift in Sources */,
+				04B8746E2723DCC400DDA69D /* LoginViewController.swift in Sources */,
 				A8493E732147D7CA004DE8A8 /* CollectionViewCell.swift in Sources */,
 				A895579E214278DB00355357 /* Course.swift in Sources */,
 				A89557A02142808500355357 /* WebsiteDescription.swift in Sources */,
 				A806CF94210B4EA300574064 /* ImageViewController.swift in Sources */,
 				A855BC1C214F71FE00075CAE /* DataProvider.swift in Sources */,
 				A8255C80214103450074F6D0 /* WebViewController.swift in Sources */,
+				04B8746C2723DC2F00DDA69D /* Extensions.swift in Sources */,
 				A83C30212108401A00592AE4 /* AppDelegate.swift in Sources */,
 				A8493E712147D7B7004DE8A8 /* MainViewController.swift in Sources */,
 				A8255C8621410DFE0074F6D0 /* TableViewCell.swift in Sources */,
@@ -397,6 +407,7 @@
 			baseConfigurationReference = 3627FC4DE13CF09ED9AF482B /* Pods-Networking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Networking/Networking.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7R6MFKUCX6;
 				INFOPLIST_FILE = Networking/Info.plist;
@@ -417,6 +428,7 @@
 			baseConfigurationReference = F97F647D1D758D71147889E5 /* Pods-Networking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Networking/Networking.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7R6MFKUCX6;
 				INFOPLIST_FILE = Networking/Info.plist;
