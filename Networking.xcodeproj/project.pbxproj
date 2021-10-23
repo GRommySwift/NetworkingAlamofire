@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041F4C9A27240220005AB77C /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F4C9927240220005AB77C /* UserProfileVC.swift */; };
 		048B6FFD271E6A1600BBA453 /* AlamofireNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B6FFC271E6A1600BBA453 /* AlamofireNetworkRequest.swift */; };
 		04B8746C2723DC2F00DDA69D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8746B2723DC2F00DDA69D /* Extensions.swift */; };
 		04B8746E2723DCC400DDA69D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8746D2723DCC400DDA69D /* LoginViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		041F4C9927240220005AB77C /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
 		048B6FFC271E6A1600BBA453 /* AlamofireNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkRequest.swift; sourceTree = "<group>"; };
 		04B8746B2723DC2F00DDA69D /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		04B8746D2723DCC400DDA69D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				A8493E702147D7B7004DE8A8 /* MainViewController.swift */,
 				048B6FFC271E6A1600BBA453 /* AlamofireNetworkRequest.swift */,
 				04B8746D2723DCC400DDA69D /* LoginViewController.swift */,
+				041F4C9927240220005AB77C /* UserProfileVC.swift */,
 				A8493E762147DC20004DE8A8 /* NetworkManager.swift */,
 				A855BC1B214F71FE00075CAE /* DataProvider.swift */,
 				A8493E722147D7CA004DE8A8 /* CollectionViewCell.swift */,
@@ -253,6 +256,7 @@
 				A8493E732147D7CA004DE8A8 /* CollectionViewCell.swift in Sources */,
 				A895579E214278DB00355357 /* Course.swift in Sources */,
 				A89557A02142808500355357 /* WebsiteDescription.swift in Sources */,
+				041F4C9A27240220005AB77C /* UserProfileVC.swift in Sources */,
 				A806CF94210B4EA300574064 /* ImageViewController.swift in Sources */,
 				A855BC1C214F71FE00075CAE /* DataProvider.swift in Sources */,
 				A8255C80214103450074F6D0 /* WebViewController.swift in Sources */,

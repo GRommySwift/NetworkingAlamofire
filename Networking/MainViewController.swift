@@ -7,6 +7,7 @@
 
 import UIKit
 import UserNotifications
+import FBSDKLoginKit
 
 enum Actions: String, CaseIterable {
     
@@ -44,13 +45,14 @@ class MainViewController: UICollectionViewController {
         registerForNotification()
         
         dataProvider.fileLocation = { (location) in
-            
             // Сохранить файл для дальнейшего использования
             print("Download finished: \(location.absoluteString)")
             self.filePath = location.absoluteString
             self.alert.dismiss(animated: false, completion: nil)
             self.postNotification()
         }
+        
+        checkLoggedIn()
     }
     
     private func showAlert() {
@@ -188,5 +190,20 @@ extension MainViewController {
         
         let request = UNNotificationRequest(identifier: "TransferComplete", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
+}
+
+// MARK: Facebook SDK
+
+extension MainViewController {
+    private func checkLoggedIn() {
+        if !(AccessToken.isCurrentAccessTokenActive) {
+            DispatchQueue.main.async {
+                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                let loginViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                self.present(loginViewController, animated: true)
+                return
+            }
+        }
     }
 }
