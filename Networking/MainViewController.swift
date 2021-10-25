@@ -8,6 +8,7 @@
 import UIKit
 import UserNotifications
 import FBSDKLoginKit
+import FirebaseAuth
 
 enum Actions: String, CaseIterable {
     
@@ -197,10 +198,11 @@ extension MainViewController {
 
 extension MainViewController {
     private func checkLoggedIn() {
-        if !(AccessToken.isCurrentAccessTokenActive) {
+        if Auth.auth().currentUser == nil {
             DispatchQueue.main.async {
                 let storyBoard = UIStoryboard(name: "Main", bundle: nil)
                 let loginViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                loginViewController.modalPresentationStyle = .fullScreen
                 self.present(loginViewController, animated: true)
                 return
             }
