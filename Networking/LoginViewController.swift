@@ -9,9 +9,14 @@
 import UIKit
 import FBSDKLoginKit
 import FirebaseAuth
+import Firebase
 import FirebaseDatabase
+import GoogleSignIn
+import Alamofire
 
 class LoginViewController: UIViewController {
+    
+    @IBOutlet weak var signInButton: GIDSignInButton!
     
     var userProfile: UserProfile?
     
@@ -34,6 +39,15 @@ class LoginViewController: UIViewController {
         loginButton.addTarget(self, action: #selector(handleCustomFBLogin), for: .touchUpInside)
         return loginButton
     }()
+    
+    lazy var googleLoginButton: GIDSignInButton = {
+       let loginButton = GIDSignInButton()
+        loginButton.frame = CGRect(x: 32, y: 520, width: view.frame.width - 64, height: 50)
+        loginButton.addTarget(self, action: #selector(googleSignIn), for: .touchUpInside)
+        return loginButton
+    }()
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,8 +65,9 @@ class LoginViewController: UIViewController {
     private func setupViews() {
         view.addSubview(fbLoginButton)
         view.addSubview(customFBLoginButton)
+        view.addSubview(googleLoginButton)
     }
-
+    
 }
 
 extension LoginViewController: LoginButtonDelegate {
@@ -144,6 +159,53 @@ extension LoginViewController: LoginButtonDelegate {
             
             print("Succesfully saved user data into firebase")
             self.openMainViewController()
+        }
+    }
+    
+    
+    
+@objc private func googleSignIn() {
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+
+        // Create Google Sign In configuration object.
+        let config = GIDConfiguration(clientID: clientID)
+
+        // Start the sign in flow!
+            GIDSignIn.sharedInstance.signIn(with: config, presenting: self) { [unowned self] user, error in
+
+          if let error = error {
+              print(error.localizedDescription)
+            return
+          }
+
+                if let userName = user?.profile?.name, let userEmail = user?.profile?.email {
+                    let userData = ["name": userName, "email": userEmail]
+                    userProfile = UserProfile(data: userData)
+                }
+                
+          guard
+            let authentication = user?.authentication,
+            let idToken = authentication.idToken
+          else {
+            return
+          }
+
+          let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+                                                         accessToken: authentication.accessToken)
+
+          // Firebase Auth...
+                Auth.auth().signIn(with: credential) { result, error in
+                    if let error = error {
+                        print(error.localizedDescription)
+                      return
+                }
+        // Displaying User name ...
+                    
+                    guard let user = result?.user else { return }
+                    print(user.displayName ?? "Success")
+                    self.saveIntoFirebase()
+            }
+                
         }
     }
 }

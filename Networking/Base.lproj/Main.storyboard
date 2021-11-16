@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0DG-es-zUD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0DG-es-zUD">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -70,22 +69,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logged in with Facebook" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prm-sm-JcG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logged in with Facebook" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prm-sm-JcG">
                                 <rect key="frame" x="76" y="205" width="238" height="71.666666666666686"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="CSS-Tc-2Ye">
+                                <rect key="frame" x="185" y="231" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rF1-4R-Kwb"/>
                         <color key="backgroundColor" name="primaryColor"/>
                         <constraints>
-                            <constraint firstItem="rF1-4R-Kwb" firstAttribute="trailing" secondItem="prm-sm-JcG" secondAttribute="trailing" constant="76" id="9PA-NW-9Nc"/>
+                            <constraint firstItem="CSS-Tc-2Ye" firstAttribute="centerX" secondItem="prm-sm-JcG" secondAttribute="centerX" id="4mU-Pm-edB"/>
                             <constraint firstItem="prm-sm-JcG" firstAttribute="top" secondItem="rF1-4R-Kwb" secondAttribute="top" constant="161" id="JcA-iG-W1t"/>
+                            <constraint firstItem="prm-sm-JcG" firstAttribute="trailing" secondItem="WFU-4g-hV2" secondAttribute="trailing" constant="-76" id="Smv-rz-TsZ"/>
                             <constraint firstItem="prm-sm-JcG" firstAttribute="leading" secondItem="rF1-4R-Kwb" secondAttribute="leading" constant="76" id="r6U-8L-l47"/>
+                            <constraint firstItem="CSS-Tc-2Ye" firstAttribute="centerY" secondItem="prm-sm-JcG" secondAttribute="centerY" id="wAf-9t-ZVJ"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" selectedImage="Profile" systemItem="contacts" id="tv0-2e-c9j"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="CSS-Tc-2Ye" id="KSF-5a-gBq"/>
+                        <outlet property="userNameLabel" destination="prm-sm-JcG" id="Owz-7B-kOz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ObQ-lR-rfL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -104,7 +112,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="100" id="X5f-Aq-Pf2" customClass="TableViewCell" customModule="Networking" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.333333969116211" width="390" height="100"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X5f-Aq-Pf2" id="wRg-ts-WQw">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="100"/>
@@ -374,7 +382,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lVK-wC-p6z"/>
+        <segue reference="ECj-Q4-YhZ"/>
         <segue reference="cWn-Vf-T64"/>
     </inferredMetricsTieBreakers>
     <resources>

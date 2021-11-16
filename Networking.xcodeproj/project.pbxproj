@@ -10,6 +10,7 @@
 		041F4C9A27240220005AB77C /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F4C9927240220005AB77C /* UserProfileVC.swift */; };
 		045859B22727056700F173B1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 045859B12727056700F173B1 /* GoogleService-Info.plist */; };
 		045859B427270E7800F173B1 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045859B327270E7800F173B1 /* UserProfile.swift */; };
+		0461C45B273368BE00FE80A1 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461C45A273368BD00FE80A1 /* CurrentUser.swift */; };
 		048B6FFD271E6A1600BBA453 /* AlamofireNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B6FFC271E6A1600BBA453 /* AlamofireNetworkRequest.swift */; };
 		04B8746C2723DC2F00DDA69D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8746B2723DC2F00DDA69D /* Extensions.swift */; };
 		04B8746E2723DCC400DDA69D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8746D2723DCC400DDA69D /* LoginViewController.swift */; };
@@ -35,6 +36,7 @@
 		041F4C9927240220005AB77C /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
 		045859B12727056700F173B1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		045859B327270E7800F173B1 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		0461C45A273368BD00FE80A1 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		048B6FFC271E6A1600BBA453 /* AlamofireNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkRequest.swift; sourceTree = "<group>"; };
 		04B8746B2723DC2F00DDA69D /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		04B8746D2723DCC400DDA69D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				A8493E7A214924F1004DE8A8 /* ImageProperties.swift */,
 				A895579D214278DB00355357 /* Course.swift */,
 				045859B327270E7800F173B1 /* UserProfile.swift */,
+				0461C45A273368BD00FE80A1 /* CurrentUser.swift */,
 				A895579F2142808400355357 /* WebsiteDescription.swift */,
 				A8255C8521410DFE0074F6D0 /* TableViewCell.swift */,
 				A8255C7F214103450074F6D0 /* WebViewController.swift */,
@@ -272,6 +275,7 @@
 				A8493E712147D7B7004DE8A8 /* MainViewController.swift in Sources */,
 				A8255C8621410DFE0074F6D0 /* TableViewCell.swift in Sources */,
 				A8255C8421410AFA0074F6D0 /* CoursesViewController.swift in Sources */,
+				0461C45B273368BE00FE80A1 /* CurrentUser.swift in Sources */,
 				045859B427270E7800F173B1 /* UserProfile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,7 +354,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -405,7 +409,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -423,7 +427,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7R6MFKUCX6;
 				INFOPLIST_FILE = Networking/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -431,7 +435,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.romaholovai.Networking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -444,7 +448,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7R6MFKUCX6;
 				INFOPLIST_FILE = Networking/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,7 +456,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.romaholovai.Networking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
