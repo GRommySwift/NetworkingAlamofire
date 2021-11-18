@@ -2,9 +2,6 @@
 //  SignInViewController.swift
 //  Networking
 //
-//  Created by Alexey Efimov on 18/10/2018.
-//  Copyright © 2018 Alexey Efimov. All rights reserved.
-//
 
 import UIKit
 import Firebase
